@@ -1,0 +1,79 @@
+{
+  "$schema": "https://raw.githubusercontent.com/anthropics/claude-code/main/schemas/settings.schema.json",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/format || true",
+            "description": "자동 코드 포맷팅"
+          }
+        ]
+      }
+    ],
+    "PostAgentUse": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '🤖 에이전트 작업 완료'",
+            "description": "에이전트 작업 완료 알림"
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "Bash": [
+      {
+        "prompt": "프로젝트 설정 및 의존성 관리",
+        "description": "npm/pnpm/yarn 패키지 설치, 프로젝트 초기화"
+      },
+      {
+        "prompt": "정적 파일 서빙",
+        "description": "개발 서버 실행 (live-server, http-server)"
+      },
+      {
+        "prompt": "코드 포맷팅 및 린팅",
+        "description": "Prettier, ESLint, Stylelint 실행"
+      },
+      {
+        "prompt": "Git 작업",
+        "description": "코드 버전 관리 (commit, push, status)"
+      }
+    ],
+    "Agent": [
+      {
+        "prompt": "초보자 학습 가이드",
+        "description": "starter-guide 에이전트로 학습 지원"
+      },
+      {
+        "prompt": "PDCA 방법론 안내",
+        "description": "pipeline-guide 에이전트로 개발 파이프라인 안내"
+      },
+      {
+        "prompt": "코드 분석 및 검토",
+        "description": "code-analyzer 에이전트로 코드 품질 검사"
+      }
+    ],
+    "allow": [
+      "Skill(starter)",
+      "Skill(starter:*)",
+      "Skill(bkit:pdca)",
+      "Skill(bkit:pdca:*)"
+    ]
+  },
+  "environment": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "0",
+    "BKIT_PROJECT_LEVEL": "starter",
+    "NODE_ENV": "development"
+  },
+  "features": {
+    "autoMemory": true,
+    "outputStyle": "bkit-learning",
+    "pdcaAutoProgress": true
+  }
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모바일 퍼스트 레이아웃</title>
+
+    <!-- CSS 파일 연결 -->
+    <link rel="stylesheet" href="css/base/reset.css">
+    <link rel="stylesheet" href="css/base/variables.css">
+    <link rel="stylesheet" href="css/base/typography.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- 웹 폰트 (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+    <!-- Header 컴포넌트 -->
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo">모바일퍼스트</a>
+            <nav class="navigation">
+                <button class="menu-toggle" aria-label="메뉴 토글">
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="/">홈</a></li>
+                    <li><a href="/about">소개</a></li>
+                    <li><a href="/contact">연락처</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="main">
+        <div class="container">
+            <section class="hero">
+                <h1 class="hero-title">모바일 퍼스트 레이아웃</h1>
+                <p class="hero-description">
+                    모든 장치에서 최적의 사용자 경험을 제공하는 반응형 웹 레이아웃
+                </p>
+            </section>
+
+            <!-- 반응형 그리드 예시 -->
+            <section class="grid-section">
+                <h2 class="section-title">반응형 그리드 시스템</h2>
+                <div class="grid">
+                    <div class="col-mobile-12 col-tablet-6 col-desktop-4">
+                        <div class="card">
+                            <h3 class="card-title">모바일 최적화</h3>
+                            <p class="card-text">320px부터 시작하는 모바일 퍼스트 디자인</p>
+                        </div>
+                    </div>
+                    <div class="col-mobile-12 col-tablet-6 col-desktop-4">
+                        <div class="card">
+                            <h3 class="card-title">접근성 우선</h3>
+                            <p class="card-text">WCAG AA 기준 준수, 키보드 내비게이션 지원</p>
+                        </div>
+                    </div>
+                    <div class="col-mobile-12 col-tablet-12 col-desktop-4">
+                        <div class="card">
+                            <h3 class="card-title">성능 중심</h3>
+                            <p class="card-text">Lighthouse 성능 점수 90+ 목표</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 주요 기능 설명 -->
+            <section class="features">
+                <h2 class="section-title">주요 기능</h2>
+                <ul class="feature-list">
+                    <li class="feature-item">✅ 햄버거 메뉴 네비게이션 (모바일)</li>
+                    <li class="feature-item">✅ 3단계 브레이크포인트 (모바일, 태블릿, 데스크톱)</li>
+                    <li class="feature-item">✅ 터치 친화적 인터랙션 (44×44px 버튼)</li>
+                    <li class="feature-item">✅ CSS 변수 시스템 (디자인 토큰)</li>
+                    <li class="feature-item">✅ 반응형 이미지 처리</li>
+                </ul>
+            </section>
+
+            <!-- 이미지 지연 로딩 데모 -->
+            <section class="lazy-demo">
+                <h2 class="section-title">이미지 지연 로딩 데모</h2>
+                <div class="grid">
+                    <div class="col-mobile-12 col-tablet-6 col-desktop-4">
+                        <img
+                            data-src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            data-srcset="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80 400w,
+                                         https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80 600w,
+                                         https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 800w"
+                            sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                            alt="코드 에디터 예시 이미지"
+                            class="lazy-image"
+                            width="600"
+                            height="400"
+                        >
+                        <p class="image-caption">모바일 퍼스트 코드 예시</p>
+                    </div>
+                    <div class="col-mobile-12 col-tablet-6 col-desktop-4">
+                        <img
+                            data-src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            data-srcset="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80 400w,
+                                         https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80 600w,
+                                         https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 800w"
+                            sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                            alt="반응형 디자인 예시 이미지"
+                            class="lazy-image"
+                            width="600"
+                            height="400"
+                        >
+                        <p class="image-caption">반응형 디자인</p>
+                    </div>
+                    <div class="col-mobile-12 col-tablet-12 col-desktop-4">
+                        <img
+                            data-src="https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            data-srcset="https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80 400w,
+                                         https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80 600w,
+                                         https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 800w"
+                            sizes="(max-width: 767px) 100vw, (max-width: 1023px) 100vw, 33vw"
+                            alt="웹 접근성 예시 이미지"
+                            class="lazy-image"
+                            width="600"
+                            height="400"
+                        >
+                        <p class="image-caption">웹 접근성</p>
+                    </div>
+                </div>
+                <p class="demo-note">이미지는 지연 로딩됩니다. 스크롤해 보세요!</p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer 컴포넌트 -->
+    <footer class="footer">
+        <div class="container">
+            <p class="copyright">&copy; 2026 모바일퍼스트. 모든 권리 보유.</p>
+            <nav class="footer-nav">
+                <a href="/privacy" class="footer-link">개인정보처리방침</a>
+                <a href="/terms" class="footer-link">이용약관</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- JavaScript 파일 -->
+    <script src="js/components/navigation.js" defer></script>
+    <script src="js/components/lazy-loading.js" defer></script>
+    <script src="js/main.js" defer></script>
+</body>
+</html>

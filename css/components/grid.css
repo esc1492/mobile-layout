@@ -1,0 +1,141 @@
+/*
+ * 반응형 그리드 시스템
+ * Design Ref: §4.1.2 — Responsive Grid System
+ * 목적: 12열 반응형 그리드 시스템 구현
+ */
+
+/* 그리드 컨테이너 */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--grid-gap-md, var(--spacing-6, 1.5rem));
+  width: 100%;
+}
+
+/* 그리드 갭 유틸리티 */
+.grid-gap-xs {
+  gap: var(--grid-gap-xs, var(--spacing-2, 0.5rem));
+}
+
+.grid-gap-sm {
+  gap: var(--grid-gap-sm, var(--spacing-4, 1rem));
+}
+
+.grid-gap-md {
+  gap: var(--grid-gap-md, var(--spacing-6, 1.5rem));
+}
+
+.grid-gap-lg {
+  gap: var(--grid-gap-lg, var(--spacing-8, 2rem));
+}
+
+/* ===== 모바일 그리드 (기본: 320px 이상) ===== */
+/* 모바일: 12열 중 1-12 사용 */
+.col-mobile-1 { grid-column: span 1; }
+.col-mobile-2 { grid-column: span 2; }
+.col-mobile-3 { grid-column: span 3; }
+.col-mobile-4 { grid-column: span 4; }
+.col-mobile-5 { grid-column: span 5; }
+.col-mobile-6 { grid-column: span 6; }
+.col-mobile-7 { grid-column: span 7; }
+.col-mobile-8 { grid-column: span 8; }
+.col-mobile-9 { grid-column: span 9; }
+.col-mobile-10 { grid-column: span 10; }
+.col-mobile-11 { grid-column: span 11; }
+.col-mobile-12 { grid-column: span 12; }
+
+/* 모바일 오프셋 */
+.col-mobile-offset-1 { grid-column-start: 2; }
+.col-mobile-offset-2 { grid-column-start: 3; }
+.col-mobile-offset-3 { grid-column-start: 4; }
+.col-mobile-offset-4 { grid-column-start: 5; }
+.col-mobile-offset-5 { grid-column-start: 6; }
+.col-mobile-offset-6 { grid-column-start: 7; }
+.col-mobile-offset-7 { grid-column-start: 8; }
+.col-mobile-offset-8 { grid-column-start: 9; }
+.col-mobile-offset-9 { grid-column-start: 10; }
+.col-mobile-offset-10 { grid-column-start: 11; }
+.col-mobile-offset-11 { grid-column-start: 12; }
+
+/* ===== 태블릿 그리드 (768px 이상) ===== */
+@media (min-width: 768px) {
+  .col-tablet-1 { grid-column: span 1; }
+  .col-tablet-2 { grid-column: span 2; }
+  .col-tablet-3 { grid-column: span 3; }
+  .col-tablet-4 { grid-column: span 4; }
+  .col-tablet-5 { grid-column: span 5; }
+  .col-tablet-6 { grid-column: span 6; }
+  .col-tablet-7 { grid-column: span 7; }
+  .col-tablet-8 { grid-column: span 8; }
+  .col-tablet-9 { grid-column: span 9; }
+  .col-tablet-10 { grid-column: span 10; }
+  .col-tablet-11 { grid-column: span 11; }
+  .col-tablet-12 { grid-column: span 12; }
+
+  .col-tablet-offset-1 { grid-column-start: 2; }
+  .col-tablet-offset-2 { grid-column-start: 3; }
+  .col-tablet-offset-3 { grid-column-start: 4; }
+  .col-tablet-offset-4 { grid-column-start: 5; }
+  .col-tablet-offset-5 { grid-column-start: 6; }
+  .col-tablet-offset-6 { grid-column-start: 7; }
+  .col-tablet-offset-7 { grid-column-start: 8; }
+  .col-tablet-offset-8 { grid-column-start: 9; }
+  .col-tablet-offset-9 { grid-column-start: 10; }
+  .col-tablet-offset-10 { grid-column-start: 11; }
+  .col-tablet-offset-11 { grid-column-start: 12; }
+}
+
+/* ===== 데스크톱 그리드 (1024px 이상) ===== */
+@media (min-width: 1024px) {
+  .col-desktop-1 { grid-column: span 1; }
+  .col-desktop-2 { grid-column: span 2; }
+  .col-desktop-3 { grid-column: span 3; }
+  .col-desktop-4 { grid-column: span 4; }
+  .col-desktop-5 { grid-column: span 5; }
+  .col-desktop-6 { grid-column: span 6; }
+  .col-desktop-7 { grid-column: span 7; }
+  .col-desktop-8 { grid-column: span 8; }
+  .col-desktop-9 { grid-column: span 9; }
+  .col-desktop-10 { grid-column: span 10; }
+  .col-desktop-11 { grid-column: span 11; }
+  .col-desktop-12 { grid-column: span 12; }
+
+  .col-desktop-offset-1 { grid-column-start: 2; }
+  .col-desktop-offset-2 { grid-column-start: 3; }
+  .col-desktop-offset-3 { grid-column-start: 4; }
+  .col-desktop-offset-4 { grid-column-start: 5; }
+  .col-desktop-offset-5 { grid-column-start: 6; }
+  .col-desktop-offset-6 { grid-column-start: 7; }
+  .col-desktop-offset-7 { grid-column-start: 8; }
+  .col-desktop-offset-8 { grid-column-start: 9; }
+  .col-desktop-offset-9 { grid-column-start: 10; }
+  .col-desktop-offset-10 { grid-column-start: 11; }
+  .col-desktop-offset-11 { grid-column-start: 12; }
+}
+
+/* 그리드 아이템 공통 스타일 */
+.grid > * {
+  min-width: 0; /* 내용 오버플로우 방지 */
+}
+
+/* 반응형 그리드 조정 */
+@media (max-width: 767px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--grid-gap-sm, var(--spacing-4, 1rem));
+  }
+
+  /* 모바일에서는 모든 컬럼이 전체 너비 */
+  .grid > * {
+    grid-column: 1 / -1;
+  }
+}
+
+/* 접근성: 그리드 역할 명시 */
+.grid[role="grid"] {
+  outline: 2px solid transparent;
+}
+
+.grid[role="grid"]:focus-visible {
+  outline-color: var(--color-primary, #3b82f6);
+}

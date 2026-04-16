@@ -1,0 +1,111 @@
+{
+  "version": "3.0",
+  "lastUpdated": "2026-04-16T10:00:00.000Z",
+  "activeFeatures": [
+    "js"
+  ],
+  "primaryFeature": "js",
+  "features": {
+    "모바일-퍼스트-레이아웃": {
+      "phase": "completed",
+      "startedAt": "2026-04-15T00:00:00.000Z",
+      "lastUpdated": "2026-04-16T00:00:00.000Z",
+      "matchRate": 96,
+      "iterationCount": 1,
+      "documents": {
+        "plan": "docs/01-plan/features/모바일-퍼스트-레이아웃.plan.md",
+        "design": "docs/02-design/features/모바일-퍼스트-레이아웃.design.md",
+        "analysis": "docs/03-analysis/모바일-퍼스트-레이아웃.analysis.md",
+        "report": "docs/04-report/모바일-퍼스트-레이아웃.report.md"
+      },
+      "successCriteria": {
+        "total": 5,
+        "met": 5,
+        "rate": 100
+      }
+    },
+    "js": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-04-15T23:16:55.740Z",
+        "lastUpdated": "2026-04-15T23:48:20.578Z"
+      },
+      "lastFile": "/Users/dwkim/.claude/projects/-Users-dwkim--claude-projects-bkit-bkit-starter/js/main.js"
+    }
+  },
+  "pipeline": {
+    "currentPhase": 1,
+    "level": "Dynamic",
+    "phaseHistory": []
+  },
+  "session": {
+    "startedAt": "2026-04-14T08:20:38.808Z",
+    "onboardingCompleted": false,
+    "lastActivity": "2026-04-15T23:48:20.579Z"
+  },
+  "history": [
+    {
+      "timestamp": "2026-04-15T23:16:55.741Z",
+      "feature": "js",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-15T23:18:48.522Z",
+      "feature": "js",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-15T23:20:59.963Z",
+      "feature": "js",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-15T23:47:03.169Z",
+      "feature": "js",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-15T23:47:49.307Z",
+      "feature": "js",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-15T23:48:08.245Z",
+      "feature": "js",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-04-15T23:48:20.579Z",
+      "feature": "js",
+      "phase": "do",
+      "action": "updated"
+    }
+  ],
+  "stateMachine": {
+    "defaultWorkflow": "default",
+    "activeWorkflows": {},
+    "totalTransitions": 0
+  },
+  "automation": {
+    "globalLevel": 2,
+    "trustScore": 40,
+    "pendingApprovals": 0,
+    "lastGateResult": null
+  },
+  "team": {
+    "enabled": true,
+    "stateFile": ".bkit/runtime/agent-state.json",
+    "eventsFile": ".bkit/runtime/agent-events.jsonl"
+  }
+}

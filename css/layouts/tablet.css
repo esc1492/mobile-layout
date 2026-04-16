@@ -1,0 +1,211 @@
+/*
+ * 태블릿 레이아웃 (768px-1023px)
+ * Design Ref: §5.1 — Mobile-First Layout
+ * 목적: 태블릿 장치에 최적화된 레이아웃 향상
+ */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* 헤더 태블릿 스타일 */
+  .header {
+    padding: var(--spacing-4, 1rem) 0;
+  }
+
+  .logo {
+    font-size: var(--font-size-xl, 1.25rem);
+  }
+
+  /* 태블릿 네비게이션: 햄버거 메뉴 제거, 풀 메뉴 표시 */
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav-list {
+    display: flex;
+    position: static;
+    background-color: transparent;
+    border-top: none;
+    box-shadow: none;
+    padding: 0;
+    gap: var(--spacing-4, 1rem);
+  }
+
+  .nav-list li {
+    margin-bottom: 0;
+  }
+
+  .nav-list a {
+    padding: var(--spacing-2, 0.5rem) var(--spacing-3, 0.75rem);
+    border-radius: var(--radius-md, 0.375rem);
+    font-weight: var(--font-weight-medium, 500);
+    transition: background-color var(--transition-fast, 150ms) var(--transition-timing, cubic-bezier(0.4, 0, 0.2, 1));
+  }
+
+  .nav-list a:hover {
+    background-color: var(--color-background-alt, #f9fafb);
+  }
+
+  /* 히어로 섹션 태블릿 */
+  .hero {
+    padding: var(--spacing-10, 2.5rem) 0;
+    border-radius: var(--radius-xl, 0.75rem);
+  }
+
+  .hero-title {
+    font-size: var(--font-size-4xl, 2.25rem);
+  }
+
+  .hero-description {
+    font-size: var(--font-size-lg, 1.125rem);
+    padding: 0;
+  }
+
+  /* 카드 태블릿 스타일 */
+  .card {
+    padding: var(--spacing-5, 1.25rem);
+    margin-bottom: 0;
+  }
+
+  .card-title {
+    font-size: var(--font-size-xl, 1.25rem);
+  }
+
+  /* 그리드 태블릿 조정: 2열 레이아웃 */
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--grid-gap-md, var(--spacing-6, 1.5rem));
+  }
+
+  /* 태블릿에서의 그리드 아이템 조정 */
+  .grid > * {
+    min-height: 200px; /* 일관된 높이 */
+  }
+
+  /* 섹션 제목 태블릿 */
+  .section-title {
+    font-size: var(--font-size-3xl, 1.875rem);
+    margin-bottom: var(--spacing-8, 2rem);
+  }
+
+  /* 기능 목록 태블릿 */
+  .feature-list {
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-4, 1rem);
+    padding: 0;
+  }
+
+  .feature-item {
+    padding: var(--spacing-3, 0.75rem);
+    border: 1px solid var(--color-border, #e5e7eb);
+    border-radius: var(--radius-md, 0.375rem);
+    background-color: var(--color-background-alt, #f9fafb);
+    font-size: var(--font-size-lg, 1.125rem);
+  }
+
+  .feature-item:last-child {
+    border-bottom: 1px solid var(--color-border, #e5e7eb);
+  }
+
+  /* 푸터 태블릿 */
+  .footer {
+    padding: var(--spacing-8, 2rem) 0;
+    text-align: left;
+  }
+
+  .footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .copyright {
+    margin-bottom: 0;
+  }
+
+  .footer-nav {
+    gap: var(--spacing-5, 1.25rem);
+  }
+
+  /* 태블릿 타이포그래피 향상 */
+  body {
+    font-size: var(--font-size-base, 1rem);
+  }
+
+  h1 {
+    font-size: var(--font-size-4xl, 2.25rem);
+  }
+
+  h2 {
+    font-size: var(--font-size-3xl, 1.875rem);
+  }
+
+  h3 {
+    font-size: var(--font-size-2xl, 1.5rem);
+  }
+
+  /* 태블릿 이미지 최적화 */
+  img {
+    border-radius: var(--radius-md, 0.375rem);
+  }
+
+  /* 태블릿 버튼 크기 조정 */
+  button,
+  .button,
+  a[role="button"] {
+    padding: var(--spacing-3, 0.75rem) var(--spacing-5, 1.25rem);
+    font-size: var(--font-size-base, 1rem);
+  }
+
+  /* 태블릿 폼 요소 */
+  input,
+  textarea,
+  select {
+    padding: var(--spacing-3, 0.75rem) var(--spacing-4, 1rem);
+    font-size: var(--font-size-base, 1rem);
+  }
+
+  /* 태블릿 간격 유틸리티 */
+  .spacing-tablet-sm {
+    margin-bottom: var(--spacing-3, 0.75rem);
+  }
+
+  .spacing-tablet-md {
+    margin-bottom: var(--spacing-5, 1.25rem);
+  }
+
+  .spacing-tablet-lg {
+    margin-bottom: var(--spacing-8, 2rem);
+  }
+}
+
+/* 태블릿 가로 모드 (768px-1023px) */
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+  .hero {
+    padding: var(--spacing-8, 2rem) 0;
+  }
+
+  .grid {
+    gap: var(--grid-gap-sm, var(--spacing-4, 1rem));
+  }
+
+  .card {
+    padding: var(--spacing-4, 1rem);
+  }
+}
+
+/* 다크 모드 태블릿 스타일 */
+@media (prefers-color-scheme: dark) and (min-width: 768px) and (max-width: 1023px) {
+  .nav-list a:hover {
+    background-color: var(--color-background-alt, #1f2937);
+  }
+
+  .feature-item {
+    background-color: var(--color-background-alt, #1f2937);
+    border-color: var(--color-border, #374151);
+  }
+
+  .feature-item:last-child {
+    border-bottom-color: var(--color-border, #374151);
+  }
+}
