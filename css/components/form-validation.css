@@ -1,0 +1,237 @@
+/*
+ * 폼 검증 컴포넌트 스타일
+ * Design Ref: §6.2 — Error Display Pattern
+ * Plan SC: FR-06 — 오류 메시지 표시, FR-07 — 접근성 지원
+ */
+
+/* ===== 연락처 페이지 레이아웃 ===== */
+
+/* 연락처 섹션 */
+.contact-section {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--spacing-8) 0;
+}
+
+/* 페이지 제목 */
+.page-title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  text-align: center;
+  margin-bottom: var(--spacing-2);
+}
+
+/* 페이지 설명 */
+.page-description {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-light);
+  text-align: center;
+  margin-bottom: var(--spacing-8);
+}
+
+/* ===== 폼 스타일 ===== */
+
+/* 폼 그룹 */
+.form-group {
+  margin-bottom: var(--spacing-6);
+}
+
+/* 폼 라벨 */
+.form-label {
+  display: block;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+  margin-bottom: var(--spacing-2);
+}
+
+/* 필수 표시 (선택사항) */
+.form-label.required::after {
+  content: ' *';
+  color: var(--color-error);
+}
+
+/* 폼 입력 필드 */
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: var(--spacing-3) var(--spacing-4);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-base);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-fast) var(--transition-timing),
+              box-shadow var(--transition-fast) var(--transition-timing);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* 텍스트 영역 */
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: var(--line-height-normal);
+}
+
+/* ===== 오류 메시지 스타일 ===== */
+
+/* 오류 메시지 컨테이너 */
+.error-msg {
+  display: none;
+  color: var(--color-error);
+  font-size: var(--font-size-sm);
+  margin-top: var(--spacing-1);
+  line-height: var(--line-height-normal);
+}
+
+/* 오류 메시지 표시 상태 */
+.error-msg.visible {
+  display: block;
+}
+
+/* 오류 상태 입력 필드 */
+.form-input.invalid,
+.form-textarea.invalid {
+  border-color: var(--color-error);
+}
+
+.form-input.invalid:focus,
+.form-textarea.invalid:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* ===== 버튼 스타일 ===== */
+
+/* 기본 버튼 스타일 */
+.btn {
+  display: inline-block;
+  padding: var(--spacing-3) var(--spacing-6);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family-base);
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color var(--transition-fast) var(--transition-timing),
+              transform var(--transition-fast) var(--transition-timing);
+  min-height: var(--touch-target-min);
+}
+
+/* 버튼 상태 */
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn:not(:disabled):hover {
+  transform: translateY(-1px);
+}
+
+.btn:not(:disabled):active {
+  transform: translateY(0);
+}
+
+/* 기본 버튼 스타일 */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--color-primary-dark);
+}
+
+/* 제출 버튼 특수 스타일 */
+.btn-submit {
+  width: 100%;
+  font-size: var(--font-size-lg);
+  padding: var(--spacing-4) var(--spacing-6);
+}
+
+/* ===== 접근성 향상 ===== */
+
+/* 키보드 포커스 표시 */
+.form-input:focus-visible,
+.form-textarea:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* 스크린 리더 전용 텍스트 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== 반응형 디자인 ===== */
+
+@media (max-width: 767px) {
+  .contact-section {
+    padding: var(--spacing-6) 0;
+  }
+
+  .page-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .page-description {
+    font-size: var(--font-size-base);
+  }
+
+  .btn-submit {
+    padding: var(--spacing-3) var(--spacing-4);
+  }
+}
+
+@media (max-width: 1023px) {
+  .contact-section {
+    padding: var(--spacing-7) var(--spacing-4);
+  }
+}
+
+/* ===== 다크 모드 지원 ===== */
+
+@media (prefers-color-scheme: dark) {
+  .form-input,
+  .form-textarea {
+    background-color: var(--color-background-alt);
+    border-color: var(--color-border);
+    color: var(--color-text);
+  }
+
+  .form-input:focus,
+  .form-textarea:focus {
+    border-color: var(--color-primary-light);
+  }
+
+  .form-input.invalid,
+  .form-textarea.invalid {
+    border-color: var(--color-error);
+  }
+
+  .btn-primary {
+    background-color: var(--color-primary);
+  }
+
+  .btn-primary:hover:not(:disabled) {
+    background-color: var(--color-primary-light);
+  }
+}

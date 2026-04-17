@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연락처 - 모바일 퍼스트 레이아웃</title>
+
+    <!-- CSS 파일 연결 -->
+    <link rel="stylesheet" href="css/base/reset.css">
+    <link rel="stylesheet" href="css/base/variables.css">
+    <link rel="stylesheet" href="css/base/typography.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- 웹 폰트 (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+    <!-- Header 컴포넌트 -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">모바일퍼스트</a>
+            <nav class="navigation">
+                <button class="menu-toggle" aria-label="메뉴 토글">
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="about.html">소개</a></li>
+                    <li><a href="contact.html" aria-current="page">연락처</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="main">
+        <div class="container">
+            <!-- Design Ref: §5.1 — Contact Page Layout -->
+            <section class="contact-section">
+                <h1 class="page-title">연락처</h1>
+                <p class="page-description">문의사항을 보내주세요</p>
+
+                <!-- Plan SC: FR-01~FR-07 (폼 검증 기능 구현) -->
+                <!-- Design Ref: §5.1 — Contact Form Structure -->
+                <form id="contact-form" class="contact-form" action="#" method="POST">
+                    <!-- Name Field -->
+                    <div class="form-group">
+                        <label for="name" class="form-label">이름</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            class="form-input"
+                            placeholder="이름을 입력해주세요"
+                            aria-describedby="name-error"
+                            data-validation="name"
+                        >
+                        <!-- Error Container for Name -->
+                        <div id="name-error" class="error-msg" data-for="name" aria-live="polite">
+                            <!-- 오류 메시지 동적 삽입 -->
+                        </div>
+                    </div>
+
+                    <!-- Email Field -->
+                    <div class="form-group">
+                        <label for="email" class="form-label">이메일</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            class="form-input"
+                            placeholder="이메일 주소를 입력해주세요"
+                            aria-describedby="email-error"
+                            data-validation="email"
+                        >
+                        <!-- Error Container for Email -->
+                        <div id="email-error" class="error-msg" data-for="email" aria-live="polite">
+                            <!-- 오류 메시지 동적 삽입 -->
+                        </div>
+                    </div>
+
+                    <!-- Message Field -->
+                    <div class="form-group">
+                        <label for="message" class="form-label">메시지</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            class="form-textarea"
+                            rows="5"
+                            placeholder="메시지를 입력해주세요 (10-1000자)"
+                            aria-describedby="message-error"
+                            data-validation="message"
+                        ></textarea>
+                        <!-- Error Container for Message -->
+                        <div id="message-error" class="error-msg" data-for="message" aria-live="polite">
+                            <!-- 오류 메시지 동적 삽입 -->
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-submit">보내기</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer 컴포넌트 -->
+    <footer class="footer">
+        <div class="container">
+            <p class="copyright">&copy; 2026 모바일퍼스트. 모든 권리 보유.</p>
+            <nav class="footer-nav">
+                <a href="/privacy" class="footer-link">개인정보처리방침</a>
+                <a href="/terms" class="footer-link">이용약관</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- JavaScript 파일 -->
+    <script src="js/components/navigation.js" defer></script>
+    <script src="js/components/lazy-loading.js" defer></script>
+    <script src="js/components/form-validation.js" defer></script>
+    <script src="js/main.js" defer></script>
+</body>
+</html>

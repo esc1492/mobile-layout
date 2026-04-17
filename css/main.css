@@ -13,6 +13,7 @@
 @import url('components/header.css');
 @import url('components/navigation.css');
 @import url('components/grid.css');
+@import url('components/form-validation.css');
 /* @import url('components/footer.css'); */
 
 /* ===== 레이아웃 스타일 (모듈-2에서 구현) ===== */
